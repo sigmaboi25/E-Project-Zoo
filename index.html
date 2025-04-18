@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+      
+      }
+     .theme{
+        height: 70px;
+     }
+      .logo {
+        transition: all 1s ease-in-out;
+
+        animation: hero 2s;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #fcfcfc;
+        background-image: linear-gradient(45deg, #ffffff, #ffffff);
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        font-style: italic;
+        position: relative;
+        display: inline-block;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        letter-spacing: 2px;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .logo:hover {
+        background-image: linear-gradient(45deg, #ffffff, rgb(0, 0, 0));
+        -webkit-background-clip: text;
+        color: transparent;
+
+        text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+        letter-spacing: 5px;
+      }
+      .video-hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .video-hero video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        z-index: 1;
+      }
+
+      .video-content {
+        text-shadow: 5px 5px 5px black;
+
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        animation: hero 2s;
+      }
+      .meet {
+        font-size: 2rem;
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        background-image: linear-gradient(45deg, #000000, #000000);
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 2rem;
+        animation: meetFadeIn 2s ease-in-out;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .meet:hover {
+        transform: scale(1.1);
+       
+        /* color: rgb(4, 163, 202); 
+  text-rgb(255, 181, 181)4px 4px rgb(255, 255, 255);*/
+      }
+
+      @keyframes meetFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animal-card {
+  /* width: 100%; 
+  height: 100%;
+  min-height: 400px;  */
+  transition: all 0.4s ease-in-out;
+}
+
+      .animal-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .animal-design {
+
+        animation: appear 3s linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+        transition: all 0.5s ease-in-out;
+        background: linear-gradient(to bottom right, #ffffff, #ffffff, #ffffff);
+
+
+
+
+
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+      }
+      .animal-design h5 {
+        font-style: italic;
+        font-size: 1.5rem;
+        color: black;
+      }
+      .animal-design p {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+color: rgb(0, 0, 0);
+      }
+      .animal-design:hover {
+        transition: 0.4s;
+        scale: 1.1;
+        font-size: larger;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+      .book {
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
+        text-shadow: 0px 0px 0px;
+        border-radius: 10px;
+        font-style: italic;
+        transition: all 0.4s ease-in-out;
+      }
+      .book:hover {
+        scale: 1.2;
+        transition: all 0.3s ease-in-out;
+        background-color: rgb(218, 0, 0);
+        color: white;
+        border-radius: 60px;
+        transform-origin: center;
+        border: 2px solid black;
+        opacity: 100%;
+        text-shadow: 2px 2px 2px #198754;
+      }
+      .plan:hover {
+        transition: 0.4s;
+        scale: 1.1;
+        color: black;
+        text-shadow: 1px 1px 1px rgb(255, 255, 255);
+        background-color: rgb(230, 200, 8);
+      }
+
+      .items {
+        font-weight: 400;
+        color: #fcfcfc;
+        /* background-image: linear-gradient(
+          45deg,
+          rgb(255, 255, 255),
+          rgb(255, 255, 255)
+        ); */
+        animation: hero 1s ease-in-out;
+        /* -webkit-background-clip: text;
+        color: transparent; */
+        font-size: larger;
+        margin: 0px 10px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        transition: all 0.4s ease-in-out;
+        font-weight: 500;
+    
+      }
+
+      .items:hover {
+        font-weight: 500;
+        /* background-image: linear-gradient(45deg, #000000, #00000096);
+        -webkit-background-clip: text;
+        color: transparent; */
+        transform: scale(1.3);
+        text-decoration: underline;
+      }
+
+      .discover {
+        color: white;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 1.5rem;
+        text-shadow: 4px 4px 4px black;
+        transition: all 1.5s ease-in-out;
+      }
+      .discover:hover {
+        scale: 1.1;
+        transition: 1s;
+        text-shadow: 10px 10px 10px rgb(2, 226, 255);
+        color: rgb(255, 255, 255);
+      }
+      .exp {
+        font-style: italic;
+        text-shadow: 4px 4px 4px black;
+        transition: all 1.5s ease-in-out;
+      }
+
+      .exp:hover {
+        scale: (1.1);
+        transition: 1s;
+        text-shadow: 25px 30px 25px rgb(37, 82, 0);
+        color: rgb(252, 29, 29);
+      }
+      .y {
+        animation: hero 1s linear;
+        font-size: x-large;
+      }
+      /* Keyframes for fade-in and move up */
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .video-content h1 {
+        animation: fadeInUp 2s ease-out forwards;
+      }
+
+      .video-content p {
+        animation: fadeInUp 2.5s ease-out forwards;
+      }
+
+      .video-content .btn {
+        animation: fadeInUp 3s ease-out forwards;
+      }
+
+      @keyframes hero {
+        from {
+          opacity: 0%;
+          transform: translateY(-100px);
+        }
+        to {
+          opacity: 100%;
+          transform: translateY(100);
+        }
+      }
+      @keyframes appear {
+        from {
+          opacity: 0%;
+          transform: translate(-100px);
+        }
+        to {
+          opacity: 100%;
+          transform: translate(100px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark theme bg-success">
+      <div class="container">
+        <a
+          class="navbar-brand fw-bold logo"
+          href="#"
+          style="
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+              'Lucida Sans', Arial, sans-serif;
+          "
+          >Dream Weaver</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link items" href="project.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link items" href="amimals.html">Animals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link items" href="ticket.html">Tickets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link items" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="video-hero">
+      <video autoplay loop muted playsinline>
+        <source src="zoo.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay"></div>
+      <div class="video-content container">
+        <h1 class="display-4 fw-bold exp">Explore the Wild</h1>
+        <p class="lead discover">Discover amazing animals at Chester Zoo</p>
+        <a href="ticket.html" class="btn btn-light btn-lg mt-3 book">Book Tickets</a>
+      </div>
+    </section>
+
+    <!-- Animals Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="mb-4 text-center meet">Meet Our Animals</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card animal-card shadow-sm animal-design">
+              <video
+                src="lion2.mp4.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                class="card-img-top"
+                alt="Elephant"
+              ></video>
+              <div class="card-body">
+                <h5 class="card-title">Terrestrial animals</h5>
+                <p class="card-text">
+                  From forests to plains, they thrive where feet touch earth.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card animal-card shadow-sm animal-design">
+              <video
+                src="Birds.mp4.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                class="card-img-top"
+                alt="Elephant"
+              ></video>
+              <div class="card-body">
+                <h5 class="card-title">Aves</h5>
+                <p class="card-text">
+                  Aves dominate the skies with grace and power, from fierce
+                  eagles to vibrant parrots.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card animal-card shadow-sm animal-design">
+              <video
+                src="sea.mp4.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                class="card-img-top"
+                alt="Elephant"
+              ></video>
+
+              <div class="card-body">
+                <h5 class="card-title">Marine</h5>
+                <p class="card-text">
+                  In every current and ripple, they reflect the mystery and
+                  beauty of the sea.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit Info -->
+    <section class="py-5">
+      <div class="container text-center">
+        <h2>Plan Your Visit</h2>
+        <p class="lead">We're open every day from 10am - 5pm.</p>
+        <a href="contact.html" class="btn btn-success plan">Get Directions</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="theme text-white py-4 bg-success">
+      <div class="container text-center">
+        <p class="mb-0">©️ 2025 DreamWeaver Zoo</p>
+      </div>
+    </footer>
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
